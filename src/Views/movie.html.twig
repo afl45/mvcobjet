@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 class="underline">{{ movie.title }}</h1>
+</head>
+<audio controls autoplay loop>
+    <source src="../src_music/bandolero_paris-latino.mp3" type="audio/mp3">
+</audio>
+<style>
+
+body {
+    background-color: #58C339;
+}
+.underline {
+    text-decoration: underline;
+}
+</style>
+
+<body>
+    <h3><p>Description :</p><br>{{ movie.description }} </h3><br>
+    <h3><p>Date de sortie du film :</p>{{ movie.date }}</h3><br>
+    <h3><p>Temps :</p>{{ movie.duration }}</h3><br>
+    <h3><p>Affiche du film :</p><img src="../src_image/{{ movie.coverImage }}" alt="affiche_du_film"></h3><br>
+    <h3><p>Genre :</p><br>{{ movie.genre.genre }} </h3><br>
+    <h3><p>Réalisateur :</p><br>{{ movie.realisateur.firstname }}&nbsp;{{ movie.realisateur.lastname }}</h3><br>
+    <h3><p>Acteurs : </p>{% for acteur in movie.actors %}{{ acteur.firstname }} &nbsp;{{ acteur.lastname }} → {{ acteur.nickname }}<br/> {% endfor %}</h3>
+</body>
+
+</html>
+
+
+commentaire
+# audio {
+    display: none;
+} #
+
+
+
+
